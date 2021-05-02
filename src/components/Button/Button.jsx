@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
-const Button = ({ onClickButton }) => {
-  window.scrollTo({
+const Button = ({ showModal, onClickButton }) => {
+  !showModal && window.scrollTo({
     top: document.documentElement.scrollHeight,
     behavior: 'smooth',
   });

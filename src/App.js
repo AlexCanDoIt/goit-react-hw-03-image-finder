@@ -64,7 +64,7 @@ class App extends Component {
   };
 
   render() {
-    const { images, error, imageForModal, isLoading } = this.state;
+    const { images, error, imageForModal, showModal, isLoading } = this.state;
     const shouldRenderLoadMoreButton = images.length > 0 && !isLoading;
 
     return (
@@ -75,7 +75,7 @@ class App extends Component {
           <ImageGallery images={images} onClickImage={this.toggleModal} />
           {isLoading && <Loader />}
           {shouldRenderLoadMoreButton && (
-            <Button onClickButton={this.fetchImages} />
+            <Button showModal={showModal} onClickButton={this.fetchImages} />
           )}
         </div>
         {imageForModal && (
